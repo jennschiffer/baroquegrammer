@@ -1,8 +1,9 @@
 $(function() {
-  const PARENT_FACE_X = '157px'; // Distance of face hole from left. Gross.
-  const PARENT_FACE_Y = '76px' // Distance of face hole from top. Gross.
-  const PARENT_FACE_HEIGHT = '186px' // The height of the face hole. Gross.
-  const PARENT_FACE_WIDTH = 135; // The width of the face hole. Gross.
+  const PARENT_FACE_X = '231px'; // Distance of face hole from left. Gross.
+  const PARENT_FACE_Y = '91px' // Distance of face hole from top. Gross.
+  const PARENT_FACE_HEIGHT = '65px' // The height of the face hole. Gross.
+  const PARENT_FACE_WIDTH = '40px'; // The width of the face hole. Gross.
+  const PARENT_FACE_ROTATE = '16deg'; // Clockwise angle rotation of the face hole. Gross.
 
   var imageFace = $('#image-face'); // The element the face is planted onto
   var imageTarget = $('#image-target'); // The "face hole". Gross.
@@ -15,7 +16,8 @@ $(function() {
       css('left', PARENT_FACE_X).
       css('top', PARENT_FACE_Y).
       css('height', PARENT_FACE_HEIGHT).
-      css('width', PARENT_FACE_WIDTH)
+      css('width', PARENT_FACE_WIDTH).
+      css('rotate', PARENT_FACE_ROTATE)
   });
 
   // Pulls the face out from the file input
