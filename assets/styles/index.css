@@ -1,3 +1,17 @@
+body {
+  font-family: monospace;
+  font-size: 1em;
+}
+
+em {
+  color: yellow;
+  background: lime;
+}
+
+label {
+  color: magenta;
+}
+
 .image-container {
   position: relative;
 }
@@ -33,4 +47,8 @@
 
 .hidden {
   display: none;
+}
+
+form {
+  padding: 10px;
 }
