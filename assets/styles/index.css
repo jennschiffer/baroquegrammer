@@ -15,6 +15,13 @@
   overflow: hidden;
   position: absolute;
   z-index: 50;
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: url(grayscale.svg); /* Firefox 4+ */
+  filter: gray; /* IE 6-9 */
 }
 
 .main-image {
@@ -22,4 +29,8 @@
   position: absolute;
   top: 0;
   z-index: 100;
+}
+
+.hidden {
+  display: none;
 }

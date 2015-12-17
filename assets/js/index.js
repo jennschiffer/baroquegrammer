@@ -1,23 +1,25 @@
 $(function() {
-  const PARENT_FACE_X = '231px'; // Distance of face hole from left. Gross.
-  const PARENT_FACE_Y = '91px' // Distance of face hole from top. Gross.
-  const PARENT_FACE_HEIGHT = '65px' // The height of the face hole. Gross.
-  const PARENT_FACE_WIDTH = '40px'; // The width of the face hole. Gross.
-  const PARENT_FACE_ROTATE = '16deg'; // Clockwise angle rotation of the face hole. Gross.
+  const PARENT_FACE_X = 225; // leftmost
+  const PARENT_FACE_Y = 92; // topmost
+  const PARENT_FACE_HEIGHT = 63; // height
+  const PARENT_FACE_WIDTH = 44; // width
+  const PARENT_FACE_ROTATE = 17; // cc angle rotation
 
-  var imageFace = $('#image-face'); // The element the face is planted onto
-  var imageTarget = $('#image-target'); // The "face hole". Gross.
+  var imageFace = $('#image-face'); // face element
+  var imageTarget = $('#image-target'); // empty face space
   var imagePreview = $('#image-preview');
+  var mainImage = $('.main-image');
+  var originalImage = $('.original-image');
 
-  // Place the image target element on document load from the constants that are
-  // defined above.
   $(document).ready(function() {
     imageTarget.
-      css('left', PARENT_FACE_X).
-      css('top', PARENT_FACE_Y).
-      css('height', PARENT_FACE_HEIGHT).
-      css('width', PARENT_FACE_WIDTH).
-      css('rotate', PARENT_FACE_ROTATE)
+      css({
+        'left'      : PARENT_FACE_X,
+        'top'       : PARENT_FACE_Y,
+        'height'    : PARENT_FACE_HEIGHT,
+        'width'     : PARENT_FACE_WIDTH,
+        'transform' : 'rotate(' + PARENT_FACE_ROTATE + 'deg)',
+      });
   });
 
   // Pulls the face out from the file input
@@ -91,6 +93,9 @@ $(function() {
       css('margin-left', -(marginLeft)).
       css('margin-top', -(marginTop)).
       css('transform', 'scale(' + scale + ')');
+
+    mainImage.removeClass('hidden');
+    originalImage.addClass('hidden');
   }
 
   // Let's make a random function that we're stealing from Stack Overflow
